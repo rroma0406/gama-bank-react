@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # consulta-rep-github
 =======
 # Getting Started with Create React App
@@ -48,3 +49,6 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 >>>>>>> 04389c68cf9717ad3a696df33b3f07bbc2c18660
+=======
+# gama-bank-roma
+>>>>>>> 27c69105d673452d4b512fcd9f3207af7d873d12
