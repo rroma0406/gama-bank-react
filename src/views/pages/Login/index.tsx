@@ -1,8 +1,9 @@
-import React, { useRef } from "react";
+import React, {useRef, useState} from "react";
 import { Link, useHistory } from "react-router-dom";
 import api from "../../../services/api";
-import WhiteCardGeneric from "../../components/WhiteCardGeneric";
+import WhiteCardLoginRegister from "../../components/WhiteCardLoginRegister";
 import InputPrimary from "../../components/InputPrimary";
+import {AiOutlineArrowRight} from "react-icons/ai"
 import { FiChevronRight } from "react-icons/fi";
 import { FormLogin } from "./styles";
 import { FormHandles } from "@unform/core";
@@ -10,6 +11,7 @@ import * as Yup from "yup";
 import { Form } from "@unform/web";
 import { useToast } from "../../../context/toastContext";
 import getValidationErrors from "../../../utils/getValidationErrors";
+import ButtonGeneric from "../../components/ButtonGeneric";
 
 interface LoginForm {
   login: string;
@@ -20,6 +22,7 @@ const Login: React.FC = () => {
   const { addToast } = useToast();
   const formRef = useRef<FormHandles>(null);
   const history = useHistory();
+  const [loading, setLoading] = useState(false);
 
   async function loginSysGama(data: LoginForm) {
     const { login, passwd } = data;
@@ -29,8 +32,8 @@ const Login: React.FC = () => {
       formRef.current?.setErrors({});
 
       const schema = Yup.object({
-        login: Yup.string().min(5).required("Cpf obrigatório."),
-        passwd: Yup.string().required("Campo obrigatório"),
+        login: Yup.string().min(5).required("Insira seu Login"),
+        passwd: Yup.string().required("Digite a sua senha"),
       });
 
       await schema.validate(data, { abortEarly: false });
@@ -39,6 +42,8 @@ const Login: React.FC = () => {
         usuario: login,
         senha: passwd,
       };
+
+      setLoading(true);
 
       await api.post(`login`, postData).then((response) => {
         console.log(response.data);
@@ -61,6 +66,7 @@ const Login: React.FC = () => {
         });
         return;
       }
+      setLoading(false);
       addToast({
         title: "Ops, algo deu errado!",
         type: "error",
@@ -71,7 +77,7 @@ const Login: React.FC = () => {
 
   return (
     <>
-      <WhiteCardGeneric title="Faça seu login" subtitle={null}>
+      <WhiteCardLoginRegister title="Faça seu login" subtitle={null}>
         <FormLogin>
           <Form ref={formRef} onSubmit={loginSysGama}>
             <InputPrimary
@@ -84,10 +90,7 @@ const Login: React.FC = () => {
               type="password"
               placeholder="Digite a sua senha"
             />
-            <button className="button-login" title="Continuar" type="submit">
-              Continuar <FiChevronRight size={21} />
-            </button>
-
+            <ButtonGeneric title="Continuar" type="submit" _colorHover="#FFFFFF" _bgHover="#8C52E5" icon={AiOutlineArrowRight} _loading={loading} />
             <div className="form-links">
               <Link to="/forgot-passwd">
                 Esqueci Minha Senha <FiChevronRight size={14} />
@@ -98,7 +101,7 @@ const Login: React.FC = () => {
             </div>
           </Form>
         </FormLogin>
-      </WhiteCardGeneric>
+      </WhiteCardLoginRegister>
     </>
   );
 };
