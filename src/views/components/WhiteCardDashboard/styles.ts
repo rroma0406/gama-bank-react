@@ -16,7 +16,7 @@ export const WhiteCardDashboard = styled.div<ContainerCardDash>`
   @media (min-width: 0) and (max-width: 767px) {
     max-width: 100%;
     height: auto;
-    padding: 20px;
+    padding: 20px 10px;
     
     &:last-of-type {
       margin-top: 20px;

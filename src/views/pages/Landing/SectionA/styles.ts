@@ -9,24 +9,12 @@ export const Container = styled.section`
   background: url(${happy}) no-repeat center bottom;
   background-size: 45%;
   float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   @media screen and (max-width: 991px) {
     background: none;
-  }
-`;
-
-export const Header = styled.header`
-  padding: 2rem;
-
-  & a {
-    border: none;
-    outline: none;
-  }
-
-  & img {
-    @media screen and (max-width: 768px) {
-      height: 50px;
-    }
   }
 `;
 
@@ -35,7 +23,8 @@ export const Content = styled.div`
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  height: 80%;
+  width: 100%;
+  height: 100%;
   color: #fff;
   font-weight: 400;
 

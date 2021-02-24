@@ -1,9 +1,8 @@
-import React, {useRef, useState} from "react";
+import React, { useRef, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import api from "../../../services/api";
 import WhiteCardLoginRegister from "../../components/WhiteCardLoginRegister";
 import InputPrimary from "../../components/InputPrimary";
-import {AiOutlineArrowRight} from "react-icons/ai"
 import { FiChevronRight } from "react-icons/fi";
 import { FormLogin } from "./styles";
 import { FormHandles } from "@unform/core";
@@ -12,6 +11,7 @@ import { Form } from "@unform/web";
 import { useToast } from "../../../context/toastContext";
 import getValidationErrors from "../../../utils/getValidationErrors";
 import ButtonGeneric from "../../components/ButtonGeneric";
+import Header from "../../components/Header";
 
 interface LoginForm {
   login: string;
@@ -32,8 +32,8 @@ const Login: React.FC = () => {
       formRef.current?.setErrors({});
 
       const schema = Yup.object({
-        login: Yup.string().min(5).required("Insira seu Login"),
-        passwd: Yup.string().required("Digite a sua senha"),
+        login: Yup.string().min(5).required("Cpf obrigatório."),
+        passwd: Yup.string().required("Campo obrigatório"),
       });
 
       await schema.validate(data, { abortEarly: false });
@@ -45,9 +45,14 @@ const Login: React.FC = () => {
 
       setLoading(true);
 
-      await api.post(`login`, postData).then((response) => {
-        console.log(response.data);
-        localStorage.setItem("@tokenApp", response.data.token);
+      // This has to be reset here and re-inserted below because the login
+      // endpoint will break if the request has an old Authorization header
+      api.defaults.headers.Authorization = null;
+
+      await api.post(`login`, postData).then(({ data }) => {
+        localStorage.setItem("@tokenApp", data.token);
+        localStorage.setItem("@userApp", data.usuario.login);
+        api.defaults.headers.Authorization = data.token;
       });
 
       addToast({
@@ -77,6 +82,7 @@ const Login: React.FC = () => {
 
   return (
     <>
+      <Header />
       <WhiteCardLoginRegister title="Faça seu login" subtitle={null}>
         <FormLogin>
           <Form ref={formRef} onSubmit={loginSysGama}>
@@ -90,7 +96,14 @@ const Login: React.FC = () => {
               type="password"
               placeholder="Digite a sua senha"
             />
-            <ButtonGeneric title="Continuar" type="submit" _colorHover="#FFFFFF" _bgHover="#8C52E5" icon={AiOutlineArrowRight} _loading={loading} />
+            <ButtonGeneric
+              title="Continuar"
+              type="submit"
+              _colorHover="#FFFFFF"
+              _bgHover="#8C52E5"
+              icon={FiChevronRight}
+              _loading={loading}
+            />
             <div className="form-links">
               <Link to="/forgot-passwd">
                 Esqueci Minha Senha <FiChevronRight size={14} />

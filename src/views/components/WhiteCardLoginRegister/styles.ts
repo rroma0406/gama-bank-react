@@ -33,18 +33,37 @@ export const ContainerCard = styled.section`
       align-items: center;
       border-radius: 8px;
 
-      .titulo-card {
-        margin: 20px 0;
-        font-weight: 700;
-        font-size: 20px;
-        text-align: center
+      @media (min-width: 0) and (max-width: 767px) {
+        height: auto;
+        padding: 20px 0;
       }
 
-      .subtitulo-card {
+      @media (min-width: 768px) and (max-width: 991px) {
+        height: auto;
+        padding: 20px 0;
+      }
+
+      .titulo-card {
+        margin: 0 0 20px;
         font-weight: 700;
         font-size: 20px;
         text-align: center;
+
+        @media (min-width: 0) and (max-width: 767px) {
+          margin: 20px 0 10px;
+        }
+
+        @media (min-width: 768px) and (max-width: 991px) {
+          margin: 20px 0 10px;
+        }
+      }
+
+      .subtitulo-card {
+        font-weight: 400;
+        font-size: 14px;
+        text-align: center;
         margin-bottom: 20px;
+        opacity: 0.5;
       }
     }
   }
