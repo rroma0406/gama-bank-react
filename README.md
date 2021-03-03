@@ -1,50 +1,288 @@
-# Getting Started with Create React App
+# Gama Bank - Accenture Academy 2.0 
+<br/><br/>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+<p align="center">
 
-In the project directory, you can run:
+  <img src="https://github.com/Reinaldooo/gama-bank/blob/readme-md/src/assets/reaccenture-equipe.png" alt="Unform"/>
+</p>
+<br/><br/>
 
-### `yarn start`
+
+
+
+## Summary
+
+  - [Gama Bank Project](#gama-bank-project)
+  - [Layout](#layout)
+  - [Publication ](#publication )
+  - [Business Objectives](#business-objectives)
+  - [Installation](#installation) 
+  - [Frontend built With ](#frontend-built-with)
+  - [Project requirements](#project-requirements)  
+  - [Architecture Atomic Design](#architecture-atomic-design)
+  - [Work Strategy](#work-strategy)  
+  - [Thanks](#thanks)
+  - [Credits](#credits)
+  - [Contact Linkedin](#contact-linkedin)
+  - [Mobile Project](https://github.com/Reinaldooo/gama-bank-mobile)
+
+  
+
+<br/><br/>
+## Gama Bank Project 
+
+This is a frontend project, developed in the selection process of Accenture February / 2021. 
+It was four weeks of intense studies in Frontend web and mobile with React and React Native, but the learning went far beyond the technical.
+The dedication of Professor Douglas and the partnership of the participants brought an exchange of rich experiences that resulted in many learnings and cooperation in teamwork. 
+We thank GamaAcademy and Accenture for this opportunity and the result provided ...
+<br/><br/>
+
+
+<p align="center">
+
+  <img src="https://github.com/Reinaldooo/gama-bank/blob/readme-md/src/assets/dashboard-consulta.png" alt="Gama Bank Page"/>
+
+ 
+  - [Let's go!!!](https://reaccenture-bank.netlify.app/) Check out the project in full. 
+ 
+</p><br/><br/>
+
+
+## Layout
+
+ <br/>
+
+  - [Figma](https://www.figma.com/file/tdrTDIY2hal9Ky4fbTvBl2/DesafioGamaAccenture_1_2-desktop?node-id=0%3A1) - Online prototyping tool
+
+<br/>
+
+  ### Layout and API credit
+
+  - Gama Academy
+
+<br/><br/>
+
+
+
+## Publication 
+
+The project was published on the Netlify platform:
+- [Netlify](https://reaccenture-bank.netlify.app/)
+
+<br/><br/>
+
+
+## Business Objectives
+
+<p align="center">
+  <img src="https://github.com/Reinaldooo/gama-bank/blob/master/src/assets/Career%20Planning%20Mind%20Map-G.gif" alt="Gama Bank Page"/>
+
+ 
+<br/><br/>
+
+
+## Installation
+
+To run this project on your computer, you need to install NodeJS:
+- [NodeJS](https://nodejs.org/en/download/)
+
+
+To install the necessary dependencies, issue the command:
+```
+npm install 
+```
+
+And to run the application:
+`npm start`
+
+
+The application will run on the local server on standard port 3000:
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open http://localhost:3000to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<br/><br/>
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+## Frontend built with 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  - [React](https://pt-br.reactjs.org/)  - A JavaScript library for building user interfaces
+  - [Redux](https://redux.js.org/) - A Predictable State Container for JS Apps
+  - [TypeScript](https://www.typescriptlang.org/) - TypeScript is an open-source language which builds on JavaScript
+  - [Styled-components](https://styled-components.com/) - Visual primitives for the component age
+  - [Unform](https://unform.dev/) - Unform is a performance-focused API for creating powerful forms experiences for both React and React Native
+  - [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) - React Testing Library builds on top of DOM Testing Library by adding APIs for working with React components
+  - [Yup](https://www.typescriptlang.org/) - Yup is a simple object schema validator I came across recently. It is inspired by Joi, but smaller than that, so it is probably a better fit to the client side
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<br/><br/>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Project requirements 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   ### (Routes)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- [x]  **"/"** Returns home
+{
+   Gama Bank is a project of our students
+}
+- [x]  "**/login**" Returns the user access page to the client account dashboard
+- [x]  "**//forgot-password**nome/[NOME]" Returns a password page
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+   ### (Private route)
 
-## Learn More
+- [x]  "dashboard/[ID]" Returns the access page to the dashboard
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
->>>>>>> 04389c68cf9717ad3a696df33b3f07bbc2c18660
-=======
-# gama-bank-roma
->>>>>>> 27c69105d673452d4b512fcd9f3207af7d873d12
+<br/><br/>
+
+
+## Architecture Atomic Design
+
+```
+\--📂 GAMA-BANK
+			\--📂 .vscode
+			    | settings.json			 
+			\--📂 public
+			    | _redirects
+			    | favicon.png
+			    | index.html
+			    | robots.txt
+			\--📂src
+			    |
+			    📂---assets
+			        |    toastContext.tsx
+			    📂---routes
+			    📂---services
+			        |    api.ts
+			        |    auth.ts
+			    📂---store
+				    📂---modules
+					    📂---accounts
+					    📂---actions						
+        			        |    index.ts
+			    📂---utils
+			        |   getValidationErrors.ts
+			    📂---views
+				    📂---components
+					    📂---ButtonGeneric
+                			        |    index.tsx
+                			        |    styles.tsx
+					    📂---Header
+                			        |    index.tsx
+                			        |    styles.tsx
+					    📂---InputPrimary
+                			        |    index.tsx
+                			        |    styles.tsx
+					    📂---SummaryCards
+                			        |    index.tsx
+                			        |    styles.tsx
+					    📂---ToastContainer
+    					    📂---Toast
+                			        |    index.tsx
+                			        |    styles.tsx
+						📂---Tooltip
+                                		        |   index.tsx
+                                		        |   styles.tsx
+					    📂---WhiteCardDashboard
+                                		        |   index.tsx
+                                		        |   styles.tsx
+					    📂---WhiteCardLoginRegister
+                                		        |   index.tsx
+                                		        |   styles.tsx
+				    📂---pages
+					    📂---CardError
+                        		        |   index.tsx
+                        		        |   styles.tsx
+					    📂---Dashboard
+            					    📂---Deposit
+                                		        |   index.tsx
+                                		        |   styles.tsx
+            					    📂---Sidenav
+                                		        |   index.tsx
+                                		        |   styles.tsx
+            					    📂---Transfer
+                                		        |   index.tsx
+                                		        |   styles.tsx
+					    📂---Landing
+            					    📂---SectionA
+                                		        📂---CreateAccountForm
+                                            		        |   styles.tsx
+            					    📂---SectionB
+                                		        |   index.tsx
+                                		        |   styles.tsx
+            					    📂---SectionC
+                                		        |   index.tsx
+                                		        |   styles.tsx
+            					    📂---SectionD
+                                		        |   index.tsx
+                                		        |   styles.tsx
+            					    📂---SectionE
+                                		        |   index.tsx
+                                		        |   styles.tsx
+					    📂---Login
+                                		        |   index.tsx
+                                		        |   styles.tsx
+					    📂---PasswordPage
+                                		        |   index.tsx
+                                		        |   styles.tsx							
+		        |   App.txs
+		        |   index.tsx
+		        |   react-app-env.d.ts								
+	|   .gitignore
+	|   package.json
+	|   README.md
+	|   tsconfig.json
+	|   yarn.lock 
+```
+<br/><br/>
+
+
+## Work Strategy
+
+<p align="center">
+
+  <img src="https://github.com/Reinaldooo/gama-bank/blob/readme-md/src/assets/work-strategy.png" alt="Gama Bank Page"/>
+
+
+<br/><br/>
+
+
+## Thanks
+
+* Teacher - Douglas Morais
+* Mentor - Renato Alencar
+* Yellow Belt - Camila Cardoso
+* To all partners participating in the Accenture Academy 2.0 ReactJS / React Native - class 2021
+<br/>
+
+
+ [<p align="center">
+  <img src="https://github.com/Reinaldooo/gama-bank/blob/readme-md/src/assets/gama-academy-logo-horizontal-verde-branco1%201.png" alt="Logo Gama Academy" width="150" heigth="35"/>](https://www.gama.academy/)
+ </p>
+
+ 
+ [<p align="center">
+  <img src="https://github.com/Reinaldooo/gama-bank/blob/readme-md/src/assets/accenture.png" alt="Logo Accenture" width="150" heigth="35"/>](https://www.accenture.com/br-pt)
+ </p>
+
+<br/><br/>
+
+## Credits
+
+<img src="https://github.com/Reinaldooo/gama-bank/blob/master/src/assets/equipe-reaccenture.png" /></a>
+
+<br/>
+
+## Contact Linkedin
+
+ 
+* Emanuel Moura - https://www.linkedin.com/in/emanmoura/ 
+* Jequélia Santana - https://www.linkedin.com/in/jequelia-santana-680773173/
+* Laís Lopes - https://www.linkedin.com/in/laismaas/
+* Rafael Roma - https://www.linkedin.com/in/rafaelproma/
+* Reinaldo Trindade - https://www.linkedin.com/in/reinaldo-trindade/
+
+
