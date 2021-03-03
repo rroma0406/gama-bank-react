@@ -15,10 +15,16 @@ export const Container = styled.div`
   @media (min-width: 0) and (max-width: 767px) {
     left: 0;
     bottom: 0;
-    height: 120px;
+    height: 90px;
     width: 100vw;
     flex-direction: row;
     justify-content: space-evenly;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+
+    .link {
+      display: none;
+    }
   }
 
   @media (min-width: 768px) and (max-width: 991px) {
@@ -28,6 +34,12 @@ export const Container = styled.div`
     width: 100vw;
     flex-direction: row;
     justify-content: space-evenly;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+
+    .link {
+      display: none;
+    }
   }
 
   .logo-gama-bank {
@@ -72,21 +84,33 @@ export const Container = styled.div`
       margin-bottom: 0;
       width: 75px;
       height: 75px;
+      background-color: transparent;
+      
+      &:hover {
+        background: transparent;
+        transition: 0.8s;
+      }
     }
 
     @media (min-width: 768px) and (max-width: 991px) {
       margin-bottom: 0;
       width: 100px;
       height: 100px;
+      background-color: transparent;
+      
+      &:hover {
+        background: transparent;
+        transition: 0.8s;
+      }
     }
 
     p {
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 500;
 
       @media (min-width: 0) and (max-width: 767px) {
         margin-bottom: 0;
-        font-size: 11px;
+        font-size: 12px;
       }
 
       @media (min-width: 768px) and (max-width: 991px) {

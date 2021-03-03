@@ -8,7 +8,9 @@ const SideNav: React.FC = () => {
     return (
         <>
             <Container>
-                <img src={img} className="logo-gama-bank" alt="logo-gama"/>
+                <Link className="link" to="/dashboard">
+                    <img src={img} className="logo-gama-bank" alt="logo-gama"/>
+                </Link>
                 <div className="menu-option">
                     <Link className="link" to="/dashboard/deposit">
                         <img className="pix" src={pix} alt="dep"/>
@@ -20,20 +22,12 @@ const SideNav: React.FC = () => {
                         <img className="pix" src={pix} alt="plan"/>
                         <p>Planos</p>
                     </Link>
-
-                </div>
-                <div className="menu-option">
-                    <Link to="/dashboard/payments">
-                        <img className="pix" src={pix} alt="payment"/>
-                        <p>Pagamentos</p>
-                    </Link>
                 </div>
                 <div className="menu-option">
                     <Link to="/dashboard/transfer">
                         <img className="pix" src={pix} alt="transaction"/>
-                        <p>Transações</p>
+                        <p>Transferências</p>
                     </Link>
-
                 </div>
             </Container>
 

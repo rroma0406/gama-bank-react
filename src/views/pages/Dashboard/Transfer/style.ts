@@ -54,31 +54,6 @@ export const Container = styled.div`
       max-width: 100%;
       padding: 0 0 20px;
 
-      input {
-        display: block;
-        border: none;
-        font-size: 16px;
-        padding: 8px;
-        font-weight: 300;
-        text-align: left;
-        width: 100%;
-        margin: 25px 10px;
-        border-bottom: 2px solid #666;
-        transition: 0.5s;
-        background: #FBFBFB;
-
-        &:focus {
-          border-bottom: 2px solid #8C52E5;
-        }
-
-        @media (min-width: 0) and (max-width: 767px) {
-          font-size: 14px;
-        }
-
-        @media (min-width: 768px) and (max-width: 991px) {
-          font-size: 16px;
-        }
-      }
       
       select {
         display: block;
@@ -122,8 +97,15 @@ export const Container = styled.div`
       }
 
       h3 {
-        margin-left: 30px;
         margin-top: 15px;
+
+        @media (min-width: 0) and (max-width: 767px) {
+          margin-left: 0;
+        }
+
+        @media (min-width: 768px) and (max-width: 991px) {
+          margin-left: 0;
+        }
       }
     }
   }

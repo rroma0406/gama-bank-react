@@ -47,6 +47,10 @@ export const Content = styled.div`
     @media screen and (max-width: 991px) {
       flex: 0 0 80%;
       margin: 2rem auto;
+      justify-content: center;
+      display: flex;
+      flex-flow: column;
+      align-items: center;
     }
   }
 `;
@@ -63,6 +67,18 @@ export const LeftContent = styled.div`
     display: block;
     font-size: 2rem;
     margin-bottom: 1.3rem;
+  }
+  
+  .m-top {
+    @media (min-width: 0) and (max-width: 767px) {
+      margin-top: 140px;
+      text-align: center;
+    }
+
+    @media (min-width: 768px) and (max-width: 991px) {
+      margin-top: 140px;
+      text-align: center;
+    }
   }
 `;
 

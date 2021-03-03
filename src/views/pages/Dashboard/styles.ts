@@ -82,66 +82,84 @@ export const ContainerDashboard = styled.div`
         padding: 0 10px;
         margin: 10px 0 45px 0;
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
 
         @media (min-width: 0) and (max-width: 767px) {
           margin: 35px 0 45px 0;
-          flex-flow: row;
-          justify-content: space-between;
+          flex-flow: column;
+          justify-content: center;
         }
 
         @media (min-width: 768px) and (max-width: 991px) {
           margin: 35px 0 45px 0;
           flex-flow: column;
-          flex-flow: row;
-          justify-content: space-between;
+          justify-content: center;
         }
 
         .bloco-welcome-hide-data {
-          width: 50%;
-          max-width: 50%;
+          background-color: transparent;
+          outline: none;
+          border: none;
           display: flex;
           justify-content: flex-start;
+          padding-bottom: 10px;
 
-          &:last-of-type {
+          &:last-child {
             display: flex;
             justify-content: flex-end;
           }
 
-          @media (min-width: 0) and (max-width: 767px) {
-            &:first-of-type {
-              width: 80%;
-              justify-content: flex-start;
-            }
+          .button-hidden-exit {
+            background: #8c52e5;
+            border: none;
             
-            &:last-of-type {
-              width: 20%;
-              justify-content: flex-end;
+            &:first-child {
+              padding-right: 20px;
             }
           }
 
-          @media (min-width: 768px) and (max-width: 991px) {
-            &:first-of-type {
-              width: 80%;
-              justify-content: flex-start;
+          @media (min-width: 0) and (max-width: 767px) {
+            &:first-child {
+              width: 100%;
+              max-width: 100%;
+              justify-content: center;
+              margin-bottom: 30px;
             }
 
-            &:last-of-type {
-              width: 20%;
-              justify-content: flex-end;
+            &:last-child {
+              width: 100%;
+              max-width: 100%;
+              justify-content: center;
+            }
+          }
+
+          @media (min-width: 0) and (max-width: 767px) {
+            &:first-child {
+              width: 100%;
+              max-width: 100%;
+              justify-content: center;
+              margin-bottom: 30px;
+            }
+
+            &:last-child {
+              width: 100%;
+              max-width: 100%;
+              justify-content: center;
             }
           }
 
           .texto-welcome {
-            color: #FFFFFF;
+            color: #ffffff;
             font-size: 22px;
 
             @media (min-width: 0) and (max-width: 767px) {
+              padding-right: 20px;
               text-align: left;
             }
 
             @media (min-width: 768px) and (max-width: 991px) {
+              padding-right: 20px;
               text-align: left;
             }
           }
@@ -175,156 +193,95 @@ export const ContainerDashboard = styled.div`
         height: 100%;
         min-height: 396px;
 
-        .title-account-history {
+        .header-account {
+          padding: 0 3px;
+          margin-bottom: 30px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
           width: 100%;
           max-width: 100%;
-          display: flex;
-          margin-top: 15px;
-          justify-content: flex-start;
-          align-items: flex-start;
 
-          .title-historic-account {
-            display: flex;
-            flex-flow: row;
-            justify-content: flex-start;
-            align-items: center;
-
-            .text-historic-account {
-              color: #9B9B9B;
-              font-size: 18px;
-              font-weight: 400;
-              text-align: left;
-              margin-left: 20px;
-            }
-
-            .account-icon-coin {
-              max-width: 38px;
-              width: 100%;
-            }
-          }
-        }
-
-        .extract-account-history {
-          width: 100%;
-          max-width: 100%;
-          margin-top: 45px;
-          display: flex;
-          justify-content: flex-start;
-          align-items: flex-start;
-          flex-flow: row wrap;
-
-          .title-historic-account {
-            display: flex;
-            flex-flow: row;
-            justify-content: flex-start;
-            align-items: center;
-
-            .text-historic-account {
-              color: #9B9B9B;
-              font-size: 18px;
-              font-weight: 400;
-              text-align: left;
-              margin-left: 20px;
-            }
-
-            .account-icon-coin {
-              max-width: 38px;
-              width: 100%;
-            }
+          @media (min-width: 0) and (max-width: 767px) {
+            flex-flow: row wrap;
           }
 
-          .row-historic-account {
-            width: 100%;
-            max-width: 100%;
+          @media (min-width: 768px) and (max-width: 991px) {
+            flex-flow: row wrap;
+          }
+
+          .title-account-history {
+            width: 50%;
+            max-width: 50%;
             display: flex;
-            justify-content: space-between;
+            margin-top: 15px;
+            justify-content: flex-start;
+            align-items: flex-start;
+            position: relative;
 
-            & + div {
-              padding-top: 25px;
-            }
-            
-            &:last-of-type {
-              margin-bottom: 20px;
+            &:last-child {
+              justify-content: flex-end;
+              align-items: flex-start;
             }
 
-            .column-icon {
+            @media (min-width: 0) and (max-width: 767px) {
               width: 100%;
-              max-width: 34px;
+              max-width: 100%;
 
-              @media (min-width: 0) and (max-width: 767px) {
-                display: none;
-              }
-
-              @media (min-width: 768px) and (max-width: 991px) {
-                display: none;
-              }
-
-              .account-icon-history-card {
-                width: 100%;
-                max-width: 34px;
+              &:last-child {
+                margin-top: 40px;
+                margin-bottom: 10px;
+                justify-content: center;
+                align-items: center;
               }
             }
 
-            .column-description {
+            @media (min-width: 768px) and (max-width: 991px) {
               width: 100%;
-              max-width: 724px;
+              max-width: 100%;
 
-              @media (min-width: 992px) and (max-width: 1199px) {
-                margin-left: 22px;
+              &:last-child {
+                margin-top: 40px;
+                margin-bottom: 10px;
+                justify-content: center;
+                align-items: center;
               }
+            }
 
-              .historic-text {
-                font-size: 16px;
-                font-weight: 700;
-                color: #000000;
+            .title-historic-account {
+              display: flex;
+              align-items: center;
 
-                @media (min-width: 0) and (max-width: 767px) {
-                  font-size: 14px;
-                }
-              }
-
-              .description-text {
-                margin-top: 5px;
+              .text-historic-account {
+                color: #9b9b9b;
                 font-size: 18px;
                 font-weight: 400;
-                color: #9B9B9B;
-
-                @media (min-width: 0) and (max-width: 767px) {
-                  font-size: 16px;
-                }
+                text-align: left;
+                margin-left: 20px;
               }
 
-              .value-text {
-                margin-top: 13px;
-                font-size: 20px;
-                font-weight: 500;
-                color: #000000;
-
-                @media (min-width: 0) and (max-width: 767px) {
-                  font-size: 18px;
-                }
-              }
-            }
-
-            .column-date {
-              width: 100%;
-              max-width: 76px;
-
-              @media (min-width: 0) and (max-width: 767px) {
-                padding-top: 1px;
-                max-width: 76px;
-              }
-
-              .date-text {
-                font-size: 12px;
+              .text-months {
+                padding: 0 10px;
+                color: #9b9b9b;
+                font-size: 18px;
                 font-weight: 400;
-                color: #9B9B9B;
+                text-align: center;
+                width: 130px;
+                max-width: 130px;
+              }
+
+              .account-icon-coin {
+                max-width: 38px;
+                width: 100%;
               }
             }
+          }
+
+          .text-historic-account-empty {
+            margin-top: 20px;
           }
         }
       }
     }
   }
-}
-`
+`;

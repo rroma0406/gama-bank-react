@@ -17,7 +17,7 @@ const SectionA: React.FC = () => {
             <Header />
             <S.Content>
                 <S.LeftContent>
-                    <span>Gama Bank é um projeto de nossos alunos.</span>
+                    <span className="m-top">Gama Bank é um projeto de nossos alunos.</span>
                     <span>Já tem conta?</span>
                     <ButtonGeneric title="Acessar" onClick={() => history.push("/login")} _width="60%" _padding="15px 25px" _fSize="18px"
                                    _bgColor="#FFFFFF" _color="#8C52E5" _colorHover="#8C52E5"
